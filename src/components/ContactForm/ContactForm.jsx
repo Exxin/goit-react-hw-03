@@ -12,12 +12,12 @@ const initialValues = {
 const validationSchema = yup.object().shape({
   name: yup
     .string()
-    .required("Required")
+    .required("Required!!!")
     .min(3, "Too short")
     .max(50, "Too long"),
   number: yup
     .string()
-    .required("Required")
+    .required("Required!!!")
     .min(3, "Too short")
     .max(50, "Too long"),
 });
@@ -41,11 +41,11 @@ export default function ContactForm({ onAdd }) {
       <Form className={css.form}>
         <label htmlFor={name}>Name</label>
         <Field className={css.name} type="text" name="name" id={name} />
-        <ErrorMessage name="name" component="div" />
+        <ErrorMessage className={css.error} name="name" component="div" />
 
         <label htmlFor={number}>Number</label>
         <Field className={css.number} type="text" name="number" id={number} />
-        <ErrorMessage name="number" component="div" />
+        <ErrorMessage className={css.error} name="number" component="div" />
 
         <button className={css.btn} type="submit">Add contact</button>
       </Form>
